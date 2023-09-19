@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^8.2.6"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
