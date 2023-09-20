@@ -15,8 +15,8 @@ const questions = [
 
   {
     type: "input",
-    message: "Please enter either a color keyword or a hexadecimal number.",
-    name: "color"
+    message: "Please enter your desired text color with either a color keyword or a hexadecimal number.",
+    name: "textColor"
   },
 
   {
@@ -24,7 +24,7 @@ const questions = [
     message: "Please pick a shape.",
     choices: [
       "Circle",
-      "Square",
+      "Rectangle",
       "Triangle",
     ],
     name: "shapes"
@@ -37,4 +37,29 @@ const questions = [
   },
 
 
-]
+];
+
+
+//create function to render SVG
+function writeToFile(fileName, data) {
+  const mySVG = generateSVG(data)
+  fs.writeFile(fileName, mySVG, (err) => {
+    err ? console.log(err) : console.log("Generated logo.svg.")
+  })
+}
+
+
+
+//create function to initialize app
+function init() {
+  inquirer.createPromptModule(questions)
+    .then((data) => {
+      writeToFile("./output/logo.svg", data)
+    })
+}
+
+
+
+
+//function call to initialize app
+init();
