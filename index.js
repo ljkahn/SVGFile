@@ -41,15 +41,20 @@ const questions = [
 
 //create function to render SVG
 
-function renderSVG(fileName, { text, textColor, background, shape }) {
+function renderSVG({ text, textColor, background, shape }) {
   //create new variable called logo and set it equal to the value of a new object created from shape and its properties
-  const logo = new Shape[shape](textColor, background, text, shape)
+  console.log(text, textColor, background);
+  const logo = new shapes[shape](text, textColor, background)
 
-  fs.writeFile(fileName, logo(render), (err) => {
-    err ? console.error(err) : console.log('Generated logo.svg');
+  fs.writeFile('./examples/logo.svg', logo.render(), (error) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Generated logo.svg')
+    }
   })
+};
 
-}
 
 
 //create function to initialize app
@@ -63,7 +68,7 @@ function init() {
 
       };
 
-      renderSVG('logo.svg', data)
+      renderSVG(data)
     })
 }
 
