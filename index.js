@@ -24,7 +24,7 @@ const questions = [
     message: "Please pick a shape.",
     choices: [
       "Circle",
-      "Rectangle",
+      "Square",
       "Triangle",
     ],
     name: "shape"
