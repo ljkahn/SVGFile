@@ -15,3 +15,9 @@ After node is installed enter the command node index.js and fill out the questio
     ```md
     ![alt text](assets/images/walkthrough.gif)
     ```
+
+## Tests
+
+This project contains a shapes.test.js file that tests for accurate rendering of each shape. The tests show that each shape correctly takes the input and produces a match to the template created in the examples directory.
+
+To run these tests, first make sure you're in the logo-generator directory, then type the command "npm run test" in the terminal. You will see output of the completed test for each shape.
